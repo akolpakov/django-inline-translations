@@ -21,14 +21,11 @@ tests_require = [
     # 'mock',
     'nose',
     'coverage',
-    # 'yanc',
+    'yanc',
     'preggy',
     'tox<2.0',
-    # 'ipdb',
     'coveralls',
-    # 'sphinx',
     'django_nose',
-    # 'httmock',
     'pypandoc',
 ]
 
