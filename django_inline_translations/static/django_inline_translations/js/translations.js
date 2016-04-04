@@ -39,7 +39,9 @@
 
             // init hallo
 
-            $(this.halloSelector).hallo({plugins: this.halloPlugins});
+            $(this.halloSelector).hallo({
+                //plugins: this.halloPlugins
+            });
             $(this.halloSelector).addClass('active');
         };
 
