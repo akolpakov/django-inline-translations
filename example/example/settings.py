@@ -24,6 +24,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django_inline_translations.middleware.SaveLocaleToSessionMiddleware',
 )
 
 ROOT_URLCONF = 'example.urls'

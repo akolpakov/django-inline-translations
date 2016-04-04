@@ -1,0 +1,22 @@
+.django-inline-translate-edit-console {
+    position: fixed;
+    left: 0;
+    top: 50%;
+}
+.django-inline-translate-edit-console a {
+    color: white;
+    text-decoration: none;
+    background: #3863ff;
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+span.django-inline-translate.active {
+    background: #3863ff;
+    animation: django-inline-translate-blink 1s ease-out forwards;
+}
+@keyframes django-inline-translate-blink {
+  to {
+    background: transparent;
+  }
+}

@@ -3,7 +3,16 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'django_inline_translations/css/style.css' %}" media="all"/>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" media="all"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://rangy.googlecode.com/svn/trunk/currentrelease/rangy-core.js"></script>
+    <script src="{% static 'django_inline_translations/js/hallo.js' %}"></script>
+    <script src="{% static 'django_inline_translations/js/translations.js' %}"></script>
 </head>
 <body>
     <section class="languages">
@@ -12,14 +21,23 @@
         {% for language in languages %}
             <a href="/{{ language.0 }}/" {% if language.0 == current_language %}class="active"{% endif %}>{{ language.1 }}</a>
         {% endfor %}
+
+        |
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
     </section>
 
-    {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-
-    {% trans "tratata" %}
+    <section>
+        <br/><br/><br/><br/>
+        {% trans "tratata" %}
+        <br/><br/>
+        {% blocktrans %}test<br/>test{% endblocktrans %}
+        <br/><br/>
+        <a href="/">{% trans "Link" %}</a>
+    </section>
 </body>
 </html>

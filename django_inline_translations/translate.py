@@ -20,7 +20,7 @@ def _replace_render(cls):
 
         if isinstance(context, RequestContext) and context.request.user.is_staff:
             if cls == TranslateNode:
-                key = str(self.filter_expression.resolve(context))
+                key = self.filter_expression.var.literal
             elif cls == BlockTranslateNode:
                 key, vars = self.render_token_list(self.singular)
             else:

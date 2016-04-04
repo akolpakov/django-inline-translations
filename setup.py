@@ -56,6 +56,7 @@ setup(
         # add your dependencies here
         # remember to use 'package-name>=x.y.z,<x.y+1.0' notation (this way you get bugfixes)
         'django>=1.6,<1.10',
+        'polib'
     ],
     extras_require={
         'tests': tests_require,
