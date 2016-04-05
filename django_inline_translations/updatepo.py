@@ -2,6 +2,7 @@ from django.utils import translation
 from django.conf import settings
 
 from .translate import get_key_hash
+from .utils import clean_translation_cache
 
 import polib
 import os
@@ -32,3 +33,5 @@ def update_po(content):
         po.save()
         mo_filepath = po.fpath[:-2] + 'mo'
         po.save_as_mofile(mo_filepath)
+
+        clean_translation_cache()
