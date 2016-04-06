@@ -5,7 +5,7 @@ import hashlib
 
 
 def get_key_hash(key):
-    return hashlib.md5(key).hexdigest()
+    return hashlib.md5(key.encode('utf-8')).hexdigest()
 
 
 def get_wrapped_content(key, content):
