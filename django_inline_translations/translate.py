@@ -9,6 +9,8 @@ def get_key_hash(key):
 
 
 def get_wrapped_content(key, content):
+    if not key:
+        return content
     return '<span class="django-inline-translate" data-translate-id="%s">%s</span>' % (get_key_hash(key), content)
 
 
