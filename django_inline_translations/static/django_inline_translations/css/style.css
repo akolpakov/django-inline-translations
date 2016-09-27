@@ -2,6 +2,7 @@
     position: fixed;
     left: 0;
     top: 50%;
+    z-index: 1000;
 }
 .django-inline-translate-edit-console a {
     color: white;
